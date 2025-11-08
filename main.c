@@ -48,20 +48,19 @@ int main(int argc, char **argv) {
         printf("\n");
     }
 
-    long long product = 1;
-    int has_positive = 0;
+    long long res = 1;
+
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             if (i + j < n - 1 && matrix[i][j] > 0) {
-                product *= matrix[i][j];
-                has_positive = 1;
+                res *= matrix[i][j];
             }
         }
     }
 
-    if (has_positive) {
-        printf("Произведение положительных элементов: %lld\n", product);
+    if (res != 1) {
+        printf("Произведение положительных элементов: %lld\n", res);
     } else {
         printf("Положительных элементов выше побочной диагонали нет.\n");
     }
